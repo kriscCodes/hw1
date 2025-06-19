@@ -50,7 +50,6 @@ img {
 	display: none;
 }
 
-/* Hamburger Menu */
 .hamburger {
 	display: none;
 	flex-direction: column;
@@ -88,7 +87,7 @@ img {
 	opacity: 0.8;
 }
 
-/* Home Section */
+
 #home {
 	height: 95%;
 	width: 100%;
@@ -139,7 +138,7 @@ img {
 	cursor: pointer;
 }
 
-/* Menu Section */
+
 #menu {
 	height: 100%;
 	width: 100%;
@@ -168,7 +167,7 @@ img {
 #menu td {
 }
 
-/* Gallery Section */
+
 #gallery {
 	height: 100%;
 	width: 100%;
@@ -214,7 +213,6 @@ img {
 	display: block;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
 	cursor: pointer;
@@ -295,8 +293,6 @@ img {
 		width: 80%;
 	}
 }
-
-/* About Section */
 #about {
 	height: 100%;
 	width: 100%;
@@ -326,7 +322,6 @@ img {
 	width: 90%;
 }
 
-/* Contact Section */
 #contact {
 	height: 100%;
 	width: 100%;
