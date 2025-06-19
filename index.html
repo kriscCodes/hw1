@@ -2,182 +2,211 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Document</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
-			rel="stylesheet"
-		/>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	</head>
 	<body>
-		<div id="container-content">
-			<div id="nav-container">
-				<div id="nav-logo">
-					<img src="logo.jpeg" alt="logo" />
-				</div>
-				<div id="nav">
-					<div><a href="#home">Home</a></div>
-					<div><a href="#menu">Menu</a></div>
-					<div><a href="#about">About</a></div>
-					<div><a href="#contact">Contact</a></div>
-				</div>
+		<nav id="navbar">
+			<div id="navbar-left">
+				<img src="assets/logo.jpeg" alt="logo" />
 			</div>
+			<input type="checkbox" id="nav-toggle" class="nav-toggle" />
+			<label for="nav-toggle" class="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</label>
+			<div id="navbar-right" class="nav-links">
+				<a href="#home">Home</a>
+				<a href="#menu">Menu</a>
+				<a href="#gallery">Gallery</a>
+				<a href="#about">About</a>
+				<a href="#contact">Contact</a>
+			</div>
+		</nav>
 
-			<div id="home">
-				<div id="home-name">
-					<h1>Byran's Bakery</h1>
+		<div id="home">
+			<div id="home-content">
+				<h1>Bryan's Bakery</h1>
+				<p>
+					Serving Fordham with the best pastries and baked goods since 2020.
+				</p>
+				<div id="home-buttons">
+					<button>View Menu</button>
+					<button>Contact Us</button>
 				</div>
-
-				<div id="home-text">
-					<p>
-						Welcome to Byran's Bakery, where every bite tells a story. Our
-						passion for baking is reflected in every loaf, every cake, and every
-						pastry. We use only the finest ingredients to create delicious,
-						authentic treats that bring joy to every occasion.
-					</p>
 				</div>
 			</div>
 		</div>
 
 		<div id="menu">
 			<h2>Our Menu</h2>
-			<div class="menu-container">
-				<div class="menu-category">
-					<h3>Breads</h3>
-					<div class="menu-items">
-						<div class="menu-item">
-							<span class="item-name">Sourdough Loaf</span>
-							<span class="item-price">$8.99</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Baguette</span>
-							<span class="item-price">$6.99</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Multigrain Bread</span>
-							<span class="item-price">$7.99</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Ciabatta</span>
-							<span class="item-price">$6.49</span>
-						</div>
-					</div>
-				</div>
+			<div id="menu-content">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Breads</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Sourdough Loaf</td>
+							<td>$8.99</td>
+						</tr>
+						<tr>
+							<td>Baguette</td>
+							<td>$6.99</td>
+						</tr>
+					</tbody>
 
-				<div class="menu-category">
-					<h3>Pastries</h3>
-					<div class="menu-items">
-						<div class="menu-item">
-							<span class="item-name">Croissant</span>
-							<span class="item-price">$3.99</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Pain au Chocolat</span>
-							<span class="item-price">$4.49</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Almond Danish</span>
-							<span class="item-price">$4.99</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Apple Turnover</span>
-							<span class="item-price">$4.29</span>
-						</div>
-					</div>
-				</div>
+					<thead>
+						<tr>
+							<th colspan="2">Pastries</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Chocolate Croissant</td>
+							<td>$4.99</td>
+						</tr>
+						<tr>
+							<td>Almond Danish</td>
+							<td>$4.99</td>
+						</tr>
+					</tbody>
 
-				<div class="menu-category">
-					<h3>Cakes</h3>
-					<div class="menu-items">
-						<div class="menu-item">
-							<span class="item-name">Chocolate Cake (slice)</span>
-							<span class="item-price">$5.99</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Carrot Cake (slice)</span>
-							<span class="item-price">$5.49</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Cheesecake (slice)</span>
-							<span class="item-price">$6.49</span>
-						</div>
-						<div class="menu-item">
-							<span class="item-name">Tiramisu (slice)</span>
-							<span class="item-price">$6.99</span>
-						</div>
-					</div>
-				</div>
+					<thead>
+						<tr>
+							<th colspan="2">Specialties</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Seasonal Fruit Tart</td>
+							<td>$5.99</td>
+						</tr>
+						<tr>
+							<td>Cinnamon Roll</td>
+							<td>$4.99</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 
 		<div id="gallery">
 			<h2>Gallery</h2>
-			<div class="gallery-slider">
-				<div class="gallery-container">
-					<img src="gallery1.jpg" alt="Bakery Interior" />
-					<img src="gallery2.jpg" alt="Fresh Bread" />
-					<img src="gallery3.jpg" alt="Pastries" />
+			<div id="gallery-content">
+				<div class="slideshow-container">
+					<div class="slide fade">
+						<img src="assets/cheese-danish.jpg" alt="Cheese danish" />
+					</div>
+					<div class="slide fade">
+						<img src="assets/milkshake.jpg" alt="Milkshake" />
+					</div>
+					<div class="slide fade">
+						<img src="assets/bec.jpeg" alt="Bacon egg and cheese sandiwch" />
+					</div>
+					<div class="slide fade">
+						<img src="assets/bagelcc.jpeg" alt="Bagel with Cream Cheese" />
+					</div>
+					<div class="slide fade">
+						<img src="assets/cheesecake.jpeg" alt="Cheesecake Slice" />
+					</div>
+					<div class="slide fade">
+						<img src="assets/appturn.jpg" alt="Apple Turnovere" />
+					</div>
 					
+					<button class="prev" aria-label="Previous image">❮</button>
+					<button class="next" aria-label="Next image">❯</button>
 				</div>
-				<button class="slider-btn prev">❮</button>
-				<button class="slider-btn next">❯</button>
+				<div class="dots-container"></div>
 			</div>
 		</div>
 
 		<div id="about">
-			<h2>Our Story</h2>
-			<div class="about-content">
-				<div class="about-text">
-					<p>
-						Founded in 2010, Byran's Bakery has been serving the community with
-						passion and dedication. Our master bakers combine traditional
-						techniques with modern innovation to create unforgettable baked
-						goods.
-					</p>
-					<p>
-						Every morning, we start fresh, using only the finest ingredients
-						sourced from local suppliers. Our commitment to quality and
-						authenticity has made us a beloved destination for bread lovers and
-						pastry enthusiasts alike.
-					</p>
-				</div>
+			<h2>About Us</h2>
+			<div id="about-content">
+				<p>
+					Bryan's Bakery is a family-owned bakery that has been serving the
+					Fordham community since 2020. We are committed to providing the best service and food that feels like home. From our sandwiches to our cakes we hope you enjoy it all!
+				</p>
+				<p>
+					Every morning we wake up early to bake fresh breads, pastries, and all your favorite treats. We use only the best ingredients and make everything from scratch. Whether you need your morning coffee fix, a quick lunch, or something sweet for dessert, we've got you covered!
+				</p>
 			</div>
 		</div>
 
 		<div id="contact">
 			<h2>Contact Us</h2>
-			<div class="contact-container">
-				<div class="map-container">
-					<iframe
-						src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_CODE"
-						width="100%"
-						height="450"
-						style="border: 0"
-						allowfullscreen=""
-						loading="lazy"
-					>
-					</iframe>
+			<div id="contact-content">
+				<div id="contact-content-left">
+					<form>
+						<div class="form-group">
+							<label for="name">Name:</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="message">Message:</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+						<button type="submit">Send Message</button>
+					</form>
+				</div>
+				<div id="contact-content-right">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.40574991557!2d-73.904534!3d40.862969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f389dc0a552b%3A0x1d19161acfdcc44d!2sBryan&#39;s%20Bakery!5e0!3m2!1sen!2sus!4v1750297278272!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 			</div>
 		</div>
 
 		<footer>
 			<div class="footer-content">
-				<div class="social-links">
-					<a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-					<a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-					<a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+				<div class="social-media">
+					<h3>Follow Us</h3>
+					<div class="social-buttons">
+						<a href="#" class="social-btn instagram">
+							<i class="fab fa-instagram"></i>
+							Instagram
+						</a>
+						<a href="#" class="social-btn facebook">
+							<i class="fab fa-facebook"></i>
+							Facebook
+						</a>
+						<a href="#" class="social-btn twitter">
+							<i class="fab fa-twitter"></i>
+							Twitter
+						</a>
+						<a href="#" class="social-btn yelp">
+							<i class="fab fa-yelp"></i>
+							Yelp
+						</a>
+					</div>
 				</div>
 				<div class="business-hours">
 					<h3>Business Hours</h3>
-					<p>Monday - Friday: 7am - 8pm</p>
-					<p>Saturday: 8am - 8pm</p>
-					<p>Sunday: 8am - 6pm</p>
+					<div class="hours-list">
+						<div class="hours-item">
+							<span class="day">Monday - Friday:</span>
+							<span class="time">6:00 AM - 8:00 PM</span>
+						</div>
+						<div class="hours-item">
+							<span class="day">Saturday:</span>
+							<span class="time">7:00 AM - 7:00 PM</span>
+						</div>
+						<div class="hours-item">
+							<span class="day">Sunday:</span>
+							<span class="time">7:00 AM - 6:00 PM</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</footer>
+		<script src="script.js"></script>
 	</body>
 </html>
