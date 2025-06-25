@@ -1,7 +1,0 @@
-Placeholder Images for Cart:
-
-1. bread-placeholder.jpg - For bread items
-2. pastry-placeholder.jpg - For pastry items  
-3. specialty-placeholder.jpg - For specialty items
-
-Note: The cart will use placeholder images from https://via.placeholder.com/ if these files don't exist. 

@@ -1,19 +1,12 @@
-// Cart functionality
+// Cart functionality simialr to what we have in script
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Initialize cart page
-document.addEventListener('DOMContentLoaded', function () {
-	renderCart();
-	updateCartCount();
+// Iset up page with proper valyes
+renderCart();
 
-	// Event listeners
-	document.getElementById('clear-cart').addEventListener('click', clearCart);
-	document.getElementById('checkout').addEventListener('click', function () {
-		alert('Checkout functionality coming soon!');
-	});
-});
+document.getElementById('clear-cart').addEventListener('click', clearCart);
 
-// Add item to cart
+
 function addToCart(name, price, image) {
 	const existingItem = cart.find((item) => item.name === name);
 
@@ -29,18 +22,15 @@ function addToCart(name, price, image) {
 	}
 
 	saveCart();
-	updateCartCount();
 }
 
-// Remove item from cart
 function removeFromCart(name) {
 	cart = cart.filter((item) => item.name !== name);
 	saveCart();
-	updateCartCount();
 	renderCart();
 }
 
-// Update item quantity
+
 function updateQuantity(name, change) {
 	const item = cart.find((item) => item.name === name);
 	if (item) {
@@ -49,40 +39,28 @@ function updateQuantity(name, change) {
 			removeFromCart(name);
 		} else {
 			saveCart();
-			updateCartCount();
 			renderCart();
 		}
 	}
 }
 
-// Clear entire cart
+
 function clearCart() {
 	cart = [];
 	saveCart();
-	updateCartCount();
 	renderCart();
 }
 
-// Save cart to localStorage
 function saveCart() {
 	localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Update cart count in navbar
-function updateCartCount() {
-	const cartCount = document.querySelector('.cart-count');
-	if (cartCount) {
-		const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-		cartCount.textContent = totalItems;
-	}
-}
 
-// Calculate total price
 function calculateTotal() {
 	return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 }
 
-// Render cart items
+// Render cart items for the page
 function renderCart() {
 	const cartItemsContainer = document.getElementById('cart-items');
 	const cartContainer = document.getElementById('cart-container');
@@ -107,7 +85,7 @@ function renderCart() {
 		cartItem.innerHTML = `
             <img src="${item.image}" alt="${
 			item.name
-		}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/80x80/4a1e00/fdebc6?text=Food'">
+		}" class="cart-item-image" onerror="this.src='assets/images (2).png'">
             <div class="cart-item-details">
                 <div class="cart-item-name">${item.name}</div>
                 <div class="cart-item-price">$${item.price.toFixed(2)}</div>
@@ -131,8 +109,4 @@ function renderCart() {
 	totalAmount.textContent = calculateTotal().toFixed(2);
 }
 
-// Make functions globally available
-window.addToCart = addToCart;
-window.removeFromCart = removeFromCart;
-window.updateQuantity = updateQuantity;
-window.clearCart = clearCart;
+
