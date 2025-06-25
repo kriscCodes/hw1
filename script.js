@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	const slides = document.getElementsByClassName('slide');
 	const dotsContainer = document.querySelector('.dots-container');
 
-	// Create dots
+
+	updateCartCount();
+
 	for (let i = 0; i < slides.length; i++) {
 		const dot = document.createElement('span');
 		dot.className = 'dot';
@@ -13,10 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const dots = document.getElementsByClassName('dot');
 
-	// Show first slide
+	
 	showSlides(slideIndex);
 
-	// Add event listeners to buttons
 	document.querySelector('.prev').addEventListener('click', () => {
 		showSlides(slideIndex - 1);
 	});
@@ -25,24 +26,23 @@ document.addEventListener('DOMContentLoaded', function () {
 		showSlides(slideIndex + 1);
 	});
 
-	// Auto advance slides every 5 seconds
+	
 	setInterval(() => {
 		showSlides(slideIndex + 1);
 	}, 5000);
 
 	function showSlides(n) {
-		// Hide all slides
+		
 		for (let i = 0; i < slides.length; i++) {
 			slides[i].style.display = 'none';
 			dots[i].classList.remove('active');
 		}
 
-		// Update slide index
+		
 		slideIndex = n;
 		if (slideIndex >= slides.length) slideIndex = 0;
 		if (slideIndex < 0) slideIndex = slides.length - 1;
 
-		// Show current slide and activate corresponding dot
 		slides[slideIndex].style.display = 'block';
 		dots[slideIndex].classList.add('active');
 	}
@@ -65,12 +65,63 @@ document.addEventListener('DOMContentLoaded', function () {
 	function handleSwipe() {
 		const swipeThreshold = 50;
 		if (touchEndX < touchStartX - swipeThreshold) {
-			// Swipe left
 			showSlides(slideIndex + 1);
 		}
 		if (touchEndX > touchStartX + swipeThreshold) {
-			// Swipe right
-			showSlides(slideIndex - 1);
+			showSlides(slideIndex + 1);
 		}
 	}
+
+	//shopping car
+	const addToCartButtons = document.querySelectorAll('.add-to-cart');
+	addToCartButtons.forEach((button) => {
+		button.addEventListener('click', function () {
+			const name = this.getAttribute('data-name');
+			const price = this.getAttribute('data-price');
+			const image = this.getAttribute('data-image');
+
+			addToCart(name, price, image);
+
+			
+			this.textContent = 'Added!';
+			this.style.backgroundColor = '#28a745';
+			setTimeout(() => {
+				this.textContent = 'Add to Cart';
+				this.style.backgroundColor = '#4a1e00';
+			}, 1000);
+		});
+	});
 });
+
+// Cart functionality (shared with cart.js)
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(name, price, image) {
+	const existingItem = cart.find((item) => item.name === name);
+
+	if (existingItem) {
+		existingItem.quantity += 1;
+	} else {
+		cart.push({
+			name: name,
+			price: parseFloat(price),
+			image: image,
+			quantity: 1,
+		});
+	}
+
+	saveCart();
+	updateCartCount();
+}
+
+function saveCart() {
+	localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function updateCartCount() {
+	const cartCount = document.querySelector('.cart-count');
+	if (cartCount) {
+		const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+		cartCount.textContent = totalItems;
+	}
+}
